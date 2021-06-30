@@ -19,20 +19,20 @@ def create_title(day, pdf):
   # Unicode is not yet supported in the py3k version; use windows-1252 standard font
   pdf.set_font('Arial', '', 24)  
   pdf.ln(2)
-  pdf.write(5, f"Digi Analytics Report")
+  pdf.write(5, f"Analytics Report")
   pdf.ln(10)
   pdf.set_font('Arial', '', 16)
   pdf.write(4, f'{day}')
   pdf.ln(5)
 
-def create_analytics_report(day=TEST_DATE, filename="DBS_Availability_report.pdf"):
+def create_analytics_report(day=TEST_DATE, filename="report.pdf"):
   pdf = FPDF() # A4 (210 by 297 mm)
 
 #  states = ['Massachusetts', 'New Hampshire']
 
   ''' First Page '''
   pdf.add_page()
-  pdf.image("./resources/DBS-Logo.png", x=150, y=2, w=50, h=20)
+  pdf.image("./resources/Logo.png", x=150, y=2, w=50, h=20)
   create_title(day, pdf)
 
   # plot_usa_case_map("./tmp/usa_cases.png", day=day)
